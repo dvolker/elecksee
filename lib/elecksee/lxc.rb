@@ -315,6 +315,7 @@ class Lxc
     unless stopped?
       stop
     end
+    run_command("#{sudo}umount /var/lib/lxc/#{name}/rootfs")
     run_command("#{sudo}lxc-destroy -n #{name}")
   end
 
